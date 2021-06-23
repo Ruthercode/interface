@@ -104,7 +104,11 @@ def get_table():
                 list_row = cur.fetchall()
                 
                 for item in list_row:
-                    result["data"].append(item)
+                    to_push = {}
+                    for key, value in enumerate(item):
+                        to_push[result["columns"][key]] = value
+
+                    result["data"].append(to_push)
                 
                 return jsonify(result), 200
 
