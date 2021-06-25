@@ -10,9 +10,8 @@ services:
 
   client:
     build: interface_app/
-    command: "nginx -g daemon off;"
     network_mode: host
     depends_on:
       - backend
     ports:
-    - 80:80
+    - 8080:80

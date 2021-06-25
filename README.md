@@ -7,4 +7,7 @@ download repositories
 build docker images
 
 # make run
-start the application
+starts the application on the http://localhost:80
+
+# make stop
+stops the application
