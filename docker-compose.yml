@@ -1,0 +1,18 @@
+
+version: "3"
+
+services:
+  backend:
+    build: interface_backend/
+    command: python ./app.py
+    ports:
+      - 5000:5000
+
+  client:
+    build: interface_app/
+    command: "nginx -g daemon off;"
+    network_mode: host
+    depends_on:
+      - server
+      ports:
+        - 80:80
