@@ -1,7 +1,7 @@
 # interface
 source from
-git clone https://github.com/Ruthercode/interface_app.git
-git clone https://github.com/Ruthercode/interface_backend.git
+https://github.com/Ruthercode/interface_app.git
+https://github.com/Ruthercode/interface_backend.git
 
 # make build
 build docker images
