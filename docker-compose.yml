@@ -13,6 +13,6 @@ services:
     command: "nginx -g daemon off;"
     network_mode: host
     depends_on:
-      - server
-      ports:
-        - 80:80
+      - backend
+    ports:
+    - 80:80
