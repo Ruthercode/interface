@@ -1,0 +1,22 @@
+article {
+    font-family: "Helvetica";
+}
+
+table {
+    width: 100%;
+}
+
+#red_button {
+    background-color: red;
+    border-color: black;
+}
+
+#save_button {
+    background-color: green;
+    border-color: green;
+}
+
+#add_button {
+    background-color: blue;
+    border-color: blue;
+}

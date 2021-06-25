@@ -1,0 +1,30 @@
+<article>
+<table mat-table #tab [dataSource]="dataSource" class="table table-striped">
+    
+    <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef>
+            {{col}}
+        </th>
+        <div *ngIf="col !=='Actions'">
+            <td mat-cell  *matCellDef="let element">
+                <mat-form-field>
+                <input [type]="dataSchema[col]" matInput [(ngModel)]="element[col]">
+                </mat-form-field>
+            </td>
+        </div>
+        <div *ngIf="col==='Actions'">
+            <td mat-cell  *matCellDef="let row">
+                <button id="red_button" (click)="onDelete(row)" class="btn btn-primary">Delete</button>
+            </td>
+        </div>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div class="d-flex justify-content-between">
+    <button (click)="onSave()" class="btn btn-primary" id="save_button">Save</button>
+    <button (click)="add()" class="btn btn-primary" id="add_button">Add</button>
+</div>
+
+</article>

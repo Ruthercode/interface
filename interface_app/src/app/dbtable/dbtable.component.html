@@ -1,0 +1,5 @@
+<mat-nav-list class="list-container">
+    <mat-list-item *ngFor="let table of tables">
+        <a matLine [routerLink]="['../editor']" [queryParams]="{table: table}">{{ table }}</a>
+    </mat-list-item>
+</mat-nav-list>

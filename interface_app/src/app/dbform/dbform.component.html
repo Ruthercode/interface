@@ -1,0 +1,36 @@
+<div id="form_div">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+        <p>Enter a database params</p>
+        
+        <div class="form-group">
+            <div >
+                <label for="user"><b>Username</b></label>
+                <input name="user" type="text" formControlName="user">
+            </div>
+        
+            <div>
+                <label for="host"><b>Host</b></label>
+                <input name="host" type="text" formControlName="host">
+            </div>
+        
+            <div>
+                <label for="database"><b>Database</b></label>
+                <input name="database" type="text" formControlName="database">
+            </div>
+            
+            <div>
+                <label for="password"><b>Password</b></label>
+                <input name="password" type="password" formControlName="password">
+            </div>
+            
+            <div>
+                <label for="port"><b>Port</b></label>
+                <input name="port" type="text" formControlName="port">
+            </div>
+        </div>
+        
+        <button  type="submit">Connect</button>
+    </form>
+        
+</div>
