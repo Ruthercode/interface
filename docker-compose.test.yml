@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+    backend:
+        build: interface_backend/
+        command: python ./app.py
+        depends_on:
+            - db
+        ports:
+        - 5000:5000
+
+    client:
+        build: interface_app/
+        network_mode: host
+        depends_on:
+        - backend
+        ports:
+        - 8080:80
+    db:
+        image: postgres:latest
+        restart: always
+        volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/1-init.sql
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_PASSWORD: 'postgres'
