@@ -1,6 +1,7 @@
-install:
-	git clone https://github.com/Ruthercode/interface_app.git
-	git clone https://github.com/Ruthercode/interface_backend.git
+build_test:
+	docker-compose -f docker-compose.test.yml build
+run_test:
+	docker-compose -f docker-compose.test.yml up --force-recreate -d
 
 build:
 	docker-compose build
@@ -11,4 +12,3 @@ stop:
 
 clear:
 	docker-compose down 
-	rm -rf interface*
